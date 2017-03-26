@@ -17,6 +17,7 @@ def main():
 def index():
   return render_template('index.html')
 
+@app.route('/_ticker_input')
 def ticker_input():
   a=request.args.get('a',0,type='str')
   print a
