@@ -19,12 +19,16 @@ def index():
 
 def ticker_input():
   a=request.args.get('a',0,type='str')
+  print a
   data = quandl.get_table('WIKI/PRICES', ticker = a)
   #output_notebook()
+  print (data.head(5))
   p=figure(title="close price", plot_height=300, plot_width=600)
   r=p.line(range(30),data.tail(30).close,color="#2222aa",line_width=3)
-  html = file_html(p, CDN, "my plot")
+  #html = file_html(p, CDN, "my plot")
   script,div=components(p)
+  print script
+  print div
   return jsonify(script, div)
 
 if __name__ == '__main__':
