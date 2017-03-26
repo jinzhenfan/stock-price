@@ -2,9 +2,7 @@ from flask import Flask, render_template, request, redirect
 from bokeh.io import push_notebook, show, output_notebook
 from bokeh.layouts import row
 from bokeh.plotting import figure
-
-from bokeh.resources import CDN
-from bokeh.embed import file_html
+from bokeh.embed import components
 
 import quandl
 quandl.ApiConfig.api_key = 'Bc6FchAnNSq7zxfjpZGR'
@@ -26,7 +24,8 @@ def ticker_input():
   p=figure(title="close price", plot_height=300, plot_width=600)
   r=p.line(range(30),data.tail(30).close,color="#2222aa",line_width=3)
   html = file_html(p, CDN, "my plot")
-  return render_template("graph1.html",html_item=html)
+  script,div=components(p)
+  return jsonify(script, div)
 
 if __name__ == '__main__':
   app.run(port=33507)
