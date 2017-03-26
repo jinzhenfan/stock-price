@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+          rel="stylesheet">
+  <script type=text/javascript>
+    $(function() {
+      $("button").click(function() {
+        $.getJSON('/_add_numbers', {
+          a: $('input[name="a"]').val()
+        }, function(data) {
+            $.each(data, function(key,val){
+            $("a[id='blog"+key.toString() +"']").text(data[key]),
+            $("a[id='blog"+key.toString() +"']").attr('href', 'https://www.instagram.com/'+ data[key] +'/?hl=en')
+            });
+        });
+        return false;
+      });
+    });
+  </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h3 class="text-muted">Type in your Fashion Word</h3>
+      </div>
+      <hr/>
+      <div>
+      <p>
+    <input type="text" size="20" name="a"> 
+    <p><button>Recommend 3 Instagram fashion bloggers for me!</button>
+    <p><span id="result"></span>
+    <a href="http://www.instagram.com/" id="blog0"></a>
+    <a href="http://www.instagram.com/" id="blog1"></a>
+    <a href="http://www.instagram.com/" id="blog2"></a>    
+      </form>
+      </div>
+    </div>
+  </body>
+</html>

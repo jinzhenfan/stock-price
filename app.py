@@ -22,7 +22,7 @@ def ticker_input():
   p=figure(title="close price", plot_height=300, plot_width=600)
   r=p.line(range(30),data.tail(30).close,color="#2222aa",line_width=3)
   show(p)
-
+  return p
 
 if __name__ == '__main__':
   app.run(port=33507)
