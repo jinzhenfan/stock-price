@@ -10,7 +10,14 @@
 		  <script type=text/javascript>
 		    $(function() {
      			 $("button").click(function() {
-				 window.location.href='graph.html';
+			 	$.getJSON('/_ticker_input', {
+          			a: $('input[name="a"]').val()
+        			}, function(data) {
+            				
+            			});
+        			});
+
+
        			 return false;
      			 })
    		   });
