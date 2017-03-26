@@ -28,9 +28,7 @@ def ticker_input():
   r=p.line(range(30),data.tail(30).close,color="#2222aa",line_width=3)
   #html = file_html(p, CDN, "my plot")
   script,div=components(p)
-  print script
-  print div
-  return jsonify(script, div)
+  return render_template('grpah.html',script=script, div=div)
 
 if __name__ == '__main__':
   app.run(port=33507)
