@@ -5,12 +5,8 @@
 		<title>Stock Ticker</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-		<link
-    			href="http://cdn.pydata.org/bokeh/release/bokeh-x.y.z.min.css"
-    			rel="stylesheet" type="text/css">
-		<link
-    			href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-x.y.z.min.css"
-    			rel="stylesheet" type="text/css">
+		<link href="http://cdn.pydata.org/bokeh/release/bokeh-x.y.z.min.css" rel="stylesheet" type="text/css">
+		<link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-x.y.z.min.css" rel="stylesheet" type="text/css">
 		<script src="http://cdn.pydata.org/bokeh/release/bokeh-x.y.z.min.js"></script>
 		<script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-x.y.z.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -21,8 +17,8 @@
 			 	$.getJSON('/_ticker_input', {
           				a: $('input[name="a"]').val()
         				}, function(data) {
-						$("span[id="result0"]").text(data[0]),
-						$("span[id="result1"]").text(data[1])
+						$("span[id='result0']").text(data[0]),
+						$("span[id='result1']").text(data[1])
 						
             				
             				});
@@ -39,7 +35,7 @@
 	<body>
 		<div>
   			<h1>User Input</h1>
-			<h3>Please enter a stock ticker eg. GOOG, and check desired features.</h3>
+			<h4>Please enter a stock ticker eg. GOOG, and check desired features.</h4>
 			<p>Ticker symbol:<input type="text" size="20" name="a"> 
     			<p><button>Submit</button>
 			<p><span id="result1"></span>
