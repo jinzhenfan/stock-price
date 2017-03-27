@@ -1,37 +1,23 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Stock Ticker</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <head>
+                <meta charset="utf-8">
+                <title>Stock Ticker</title>                
                 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script type=text/javascript>
-		    $(function() {
-     			 $("button").click(function() {
-			 	$.getJSON('/_ticker_input', {
-          				a: $('input[name="a"]').val()
-        				}, function(data) {
-	           				
-            				});
-        			});
-       			 	return false;
-     			 });
-   		   });
- 		</script>
-	
-		
+                <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
 
-
-	</head>
-	<body>
-		<div>
-  			<h1>User Input</h1>
-			<h4>Please enter a stock ticker eg. GOOG, and check desired features.</h4>
-			<p>Ticker symbol:<input type="text" size="20" name="a"> 
-    			<p><button>Submit</button>
-		
-		</div>
-	</body>
+        </head>
+        <body>
+                <div>
+                        <h1>User Input</h1>
+                        <h4>Please enter a stock ticker eg. GOOG, and check desired features.</h4>
+                        <p>Ticker symbol:
+                        <form action="/graph" method="POST">
+                            <input type="text" name="text">
+                            <input type="submit" name="my-form" value="Send">
+                        </form>
+                </div>
+        </body>
 </html>
+
+
