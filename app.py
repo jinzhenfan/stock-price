@@ -41,7 +41,7 @@ def graph():
           data = quandl.get_table('WIKI/PRICES', ticker = a)  
           #output_notebook()
           print (data.head(5))
-          p=figure(title="close price", plot_height=300, plot_width=600)
+          p=figure(title="close price of"+a+"in last month", plot_height=300, plot_width=600)
           r=p.line(range(30),data.tail(30).close,color="#2222aa",line_width=3)
           #html = file_html(p, CDN, "my plot")
           script,div=components(p)
